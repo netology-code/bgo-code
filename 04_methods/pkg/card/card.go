@@ -16,7 +16,6 @@ func (s *Service) IssueCard(issuer string, currency string) *Card {
 		Currency: currency,
 		Number:   "0000 0000 0000 0000",
 		Icon:     "https://...",
-		Pin:      "0000",
 	}
 	s.Cards = append(s.Cards, card)
 	return card
@@ -47,14 +46,13 @@ type Card struct {
 	Currency string
 	Number   string
 	Icon     string
-	Pin      string
 }
 
 type Owner struct {
 	Name string
 }
 
-func IssueCard(service Service, issuer string, currency string) *Card {
+func IssueCard(service *Service, issuer string, currency string) *Card {
 	// TODO: check input
 	card := &Card{
 		Issuer:   issuer,
@@ -62,7 +60,6 @@ func IssueCard(service Service, issuer string, currency string) *Card {
 		Currency: currency,
 		Number:   "0001",
 		Icon:     "https://...",
-		Pin:      "0000",
 	}
 	service.Cards = append(service.Cards, card)
 	return card
