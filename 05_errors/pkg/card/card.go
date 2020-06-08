@@ -18,7 +18,6 @@ func (s *Service) IssueCard(issuer string, currency string) *Card {
 		Currency: currency,
 		Number:   "0000 0000 0000 0000",
 		Icon:     "https://...",
-		Pin:      "0000",
 	}
 	s.Cards = append(s.Cards, card)
 	return card
@@ -75,6 +74,21 @@ func (s *Service) FindById(id int64) (*Card, bool) {
 //			target.Balance += amount
 //		}
 //	}
+//}
+
+//func (s *Service) Transfer(fromId int64, toNumber string, amount int64) {
+//	source, ok := s.FindById(fromId)
+//	if !ok {
+//		return
+//	}
+//
+//	target, ok := s.FindByNumber(toNumber)
+//	if !ok {
+//		return
+//	}
+//
+//	source.Balance -= amount
+//	target.Balance += amount
 //}
 
 //type TransferError string
@@ -150,5 +164,4 @@ type Card struct {
 	Currency string
 	Number   string
 	Icon     string
-	Pin      string
 }
