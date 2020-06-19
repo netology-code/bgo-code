@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>Music Copyright: https://www.bensound.com</p>
+    <audio controls src="bensound-summer.mp3"></audio>
+    <button id="play">Play</button>
+    <script>
+        const play = document.getElementById('play');
+        play.addEventListener('click', () => {
+            let sum = 0;
+            for (let i = 0; i < 10000000000; i++) {
+                sum++;
+            }
+        });
+    </script>
+</body>
+</html>
