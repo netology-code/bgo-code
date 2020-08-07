@@ -188,20 +188,6 @@ func PathParams(ctx context.Context) (*Params, error) {
 	return params, nil
 }
 
-func (r *ReMux) handler(method Method, path string) (http.Handler, bool) {
-	handlers, exists := r.plain[method]
-	if !exists {
-		return nil, false
-	}
-
-	handler, ok := handlers[path]
-	if !ok {
-		return nil, false
-	}
-
-	return handler, true
-}
-
 func isValidMethod(method Method) bool {
 	for _, m := range []Method{GET, POST, PUT, PATCH, DELETE} {
 		if m == method {
